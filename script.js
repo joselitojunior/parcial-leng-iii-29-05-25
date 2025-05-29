@@ -20,10 +20,17 @@ function onEmailChange(e) {
     email = document.getElementById('email').value;
 }
 
-function next() {
+function formIsValid() {
     if (!name || !lastName || !dni || !dateOfBirth || !email) {
+        return false;
+    }
+    return true;
+}
+
+function next() {
+    if (!formIsValid()) {
         alert('Por favor, completa todos los campos.');
-        return;
+        return
     }
     const nationality = prompt('Cuál es tu nacionalidad?');
     const favoriteColor = prompt('Cuál es tu color favorito?');
