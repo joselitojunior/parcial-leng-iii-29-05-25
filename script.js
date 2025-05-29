@@ -20,7 +20,15 @@ function onEmailChange(e) {
     email = document.getElementById('email').value;
 }
 
+function isNameValid() {
+}
+
 function isFormValid() {
+    if (!lastName) alert('Apellido no és válido.');
+    else if (!name) alert('Nombre no és válido.');
+    else if (!dni) alert('DNI no és válido.');
+    else if (!dateOfBirth) alert('Fecha de nascimiento no és válido.');
+    else if (!email) alert('Email no és válido.');
     if (!name || !lastName || !dni || !dateOfBirth || !email) {
         return false;
     }
@@ -28,10 +36,7 @@ function isFormValid() {
 }
 
 function next() {
-    if (!isFormValid()) {
-        alert('Por favor, completa todos los campos.');
-        return
-    }
+    if (!isFormValid()) return;
 
     let nationality, favoriteColor, petName = ''
 
