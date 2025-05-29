@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .forms {
+            background-color: white;
+            height: fit-content;
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+
+        .inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .inputs > li {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            width: 20rem;
+        }
+
+        .inputs > li > input {
+            padding: 0.3rem;
+        }
+
+        .main {
+            display: flex;
+            width: 100dvw;
+            height: 100dvh;
+            background-color: rgb(241, 241, 241);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button {
+            display: flex;
+            margin-top: 1rem;
+            background-color: rgb(50, 50, 236);
+            outline: none;
+            border: none;
+            color: white;
+            padding: 0.6rem;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0.3rem;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: rgb(23, 23, 218);
+        }
+
+        .answer {
+            border: 2px solid rgb(23, 23, 218);
+            margin-top: 1rem;
+            padding: 0.5rem;
+            display: flex;
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    <main class="main">
+        <div class="forms" id="form1">
+            <ul class="inputs">
+                <li>
+                    <span>Apellido:</span>
+                    <input type="text" id="lastName" placeholder="Escribí aqui" onchange="onLastNameChange()">
+                </li>
+                <li>
+                    <span>Nombre:</span>
+                    <input type="text" id="name" placeholder="Escribí aqui" onchange="onNameChange()">
+                </li>
+                <li>
+                    <span>DNI:</span>
+                    <input type="text" id="dni" placeholder="Escribí aqui" onchange="onDNIChange()">
+                </li>
+                <li>
+                    <span>Fecha de Nascimiento:</span>
+                    <input type="date" id="dateOfBirth" placeholder="Escribí aqui" onchange="onDateOfBirthChange()">
+                </li>
+                <li>
+                    <span>Email:</span>
+                    <input type="text" id="email" placeholder="Escribí aqui" onchange="onEmailChange()">
+                </li>
+            </ul>
+            <button class="button" onclick="next()">Preguntas-Respuestas</button>
+            <div class="answer" id="answer">Ninguna respuesta.</div>
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
