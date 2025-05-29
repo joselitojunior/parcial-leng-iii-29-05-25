@@ -20,7 +20,7 @@ function onEmailChange(e) {
     email = document.getElementById('email').value;
 }
 
-function formIsValid() {
+function isFormValid() {
     if (!name || !lastName || !dni || !dateOfBirth || !email) {
         return false;
     }
@@ -28,13 +28,39 @@ function formIsValid() {
 }
 
 function next() {
-    if (!formIsValid()) {
+    if (!isFormValid()) {
         alert('Por favor, completa todos los campos.');
         return
     }
-    const nationality = prompt('Cuál es tu nacionalidad?');
-    const favoriteColor = prompt('Cuál es tu color favorito?');
-    const petName = prompt('Cuál es el nombre de tu mascote?');
+
+    let nationality, favoriteColor, petName = ''
+
+    while (true) {
+        nationality = prompt('Cuál es tu nacionalidad?');
+        if (nationality) {
+            break
+        } else {
+            alert('Este valor no és válido.')
+        }
+    }
+
+    while (true) {
+        favoriteColor = prompt('Cuál es tu color favorito?');
+        if (favoriteColor) {
+            break
+        } else {
+            alert('Este valor no és válido.')
+        }
+    }
+
+    while (true) {
+        petName = prompt('Cuál es el nombre de tu mascote?');
+        if (petName) {
+            break
+        } else {
+            alert('Este valor no és válido.')
+        }
+    }
     const answerElement = document.getElementById("answer");
     answerElement.innerText = `${nationality}-${favoriteColor}-${petName}`;
 }
